@@ -25,7 +25,7 @@ namespace coll {
 
 // 向最小堆 t 插入值 v：追加到尾部后上浮，保持堆序（父 <= 子）。
 // 上浮：从新元素位置开始，与父节点比较，比父小则交换，逐级上移。
-pub func heap_push(t: table<i64>, v: i64) {
+pub func heap_push(ref t: table<i64>, v: i64) {
     table_push(t, v)
     var i: i64 = len(t) - 1
     var up: bool = true
@@ -122,7 +122,7 @@ pub func heap_size(t: table<i64>) -> i64 {
 // ---------- 栈 ----------
 
 // 入栈：追加到表尾（表尾即栈顶）。
-pub func stack_push(t: table<i64>, v: i64) {
+pub func stack_push(ref t: table<i64>, v: i64) {
     table_push(t, v)
 }
 
